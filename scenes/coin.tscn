@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c77sikdbvev4r"]
+[gd_scene load_steps=6 format=3 uid="uid://c77sikdbvev4r"]
 
 [ext_resource type="Texture2D" uid="uid://bkm7nmld4kpn3" path="res://assets/sprites/coinNiklas1.png" id="1_3vjiu"]
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_sv4jk"]
 [ext_resource type="Texture2D" uid="uid://dr0y835bvekpx" path="res://assets/sprites/coinNiklas2.png" id="2_35hfe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hanx8"]
@@ -22,11 +23,16 @@ radius = 6.08276
 
 [node name="Coin" type="Area2D"]
 collision_layer = 0
+collision_mask = 9
+script = ExtResource("1_sv4jk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hanx8")
 autoplay = "default"
-frame_progress = 0.322754
+frame_progress = 0.634583
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0kjee")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

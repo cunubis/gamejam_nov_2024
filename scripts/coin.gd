@@ -11,6 +11,14 @@ func _process(delta: float) -> void:
 	pass
 
 # delete object when body is entered and increment coin score to 1 after
+func _on_area_entered(body: Node2D) -> void:
+	queue_free()
+	Global.coinScore += 1
+	print("Globaler Coin Score erhoeht auf:")
+	print(Global.coinScore)
+
+
+
 func _on_body_entered(body: Node2D) -> void:
 	queue_free()
 	Global.coinScore += 1

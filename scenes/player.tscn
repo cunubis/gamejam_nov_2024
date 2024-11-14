@@ -139,7 +139,6 @@ animations = [{
 height = 34.0
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 6
 script = ExtResource("1_iumue")
 
 [node name="PlayerImage" type="AnimatedSprite2D" parent="."]

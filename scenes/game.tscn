@@ -1,11 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bryo4hyckymmt"]
+[gd_scene load_steps=5 format=3 uid="uid://bryo4hyckymmt"]
 
-[ext_resource type="PackedScene" uid="uid://dgi8etwct83r8" path="res://scenes/woodcutter.tscn" id="1_k2fwk"]
-[ext_resource type="Script" path="res://scripts/woodcutter.gd" id="2_8sfeq"]
-[ext_resource type="PackedScene" uid="uid://c77sikdbvev4r" path="res://scenes/cash.tscn" id="2_12ri7"]
-[ext_resource type="Script" path="res://scripts/cash.gd" id="3_o5rjx"]
+[ext_resource type="PackedScene" uid="uid://bpbuipbtxrvw" path="res://scenes/player.tscn" id="2_83e28"]
 [ext_resource type="Texture2D" uid="uid://dg0nwppj8fq2s" path="res://assets/sprites/Tileset.png" id="3_yuqym"]
-[ext_resource type="PackedScene" uid="uid://dr10f5wnxprwl" path="res://scenes/platform.tscn" id="4_na6ep"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urn15"]
 texture = ExtResource("3_yuqym")
@@ -435,44 +431,6 @@ texture = ExtResource("3_yuqym")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_urn15")
 
-[sub_resource type="Animation" id="Animation_yrv8y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(126, -57)]
-}
-
-[sub_resource type="Animation" id="Animation_aqk13"]
-resource_name = "move"
-length = 4.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.1, 3.73333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-94, -50), Vector2(115, -50), Vector2(126, -34)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jnngr"]
-_data = {
-"RESET": SubResource("Animation_yrv8y"),
-"move": SubResource("Animation_aqk13")
-}
-
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -480,25 +438,5 @@ tile_set = SubResource("TileSet_l36wi")
 format = 2
 layer_0/tile_data = PackedInt32Array(65533, 0, 0, 131069, 0, 1, 196605, 0, 2, 262141, 0, 3, 327677, 0, 4, 393213, 0, 5, 65534, 65536, 0, 131070, 65536, 1, 196606, 65536, 2, 262142, 65536, 3, 327678, 65536, 4, 393214, 65536, 5, 65535, 131072, 0, 131071, 131072, 1, 196607, 131072, 2, 262143, 131072, 3, 327679, 131072, 4, 393215, 131072, 5, 0, 196608, 0, 65536, 196608, 1, 131072, 196608, 2, 196608, 196608, 3, 262144, 196608, 4, 327680, 196608, 5, 1, 262144, 0, 65537, 262144, 1, 131073, 262144, 2, 196609, 262144, 3, 262145, 262144, 4, 327681, 262144, 5, 2, 327680, 0, 65538, 327680, 1, 131074, 327680, 2, 196610, 327680, 3, 262146, 327680, 4, 327682, 327680, 5, -65532, 655360, 0, 4, 655360, 1, -65531, 720896, 0, 5, 720896, 1, -65530, 786432, 0, 6, 786432, 1, -65529, 851968, 0, 7, 851968, 1, -65528, 917504, 0, 8, 917504, 1, -65527, 983040, 0, 9, 983040, 1, -131061, 655360, 0, -65525, 655360, 1, -131060, 65536, 1, -65524, 65536, 2, -131059, 131072, 1, -65523, 131072, 2, -131058, 851968, 0, -65522, 851968, 1, -131057, 917504, 0, -65521, 917504, 1, -131056, 983040, 0, -65520, 983040, 1, -65518, 655360, 0, 18, 655360, 1, -65517, 720896, 0, 19, 720896, 1, -65516, 786432, 0, 20, 786432, 1, -65515, 851968, 0, 21, 851968, 1, -65514, 917504, 0, 22, 917504, 1, -65513, 983040, 0, 23, 983040, 1, 65526, 655360, 0, 131062, 655360, 1, 65527, 720896, 0, 131063, 720896, 1, 65528, 786432, 0, 131064, 786432, 1, 65529, 851968, 0, 131065, 851968, 1, 65530, 917504, 0, 131066, 917504, 1, 65531, 983040, 0, 131067, 983040, 1, -196595, 131072, 0, -196596, 65536, 0, -196623, 0, 0, -131087, 0, 1, -196622, 65536, 0, -131086, 65536, 1, -196621, 131072, 0, -131085, 131072, 1, -196620, 196608, 0, -131084, 196608, 1, -196619, 262144, 0, -131083, 262144, 1, -196618, 327680, 0, -131082, 327680, 1)
 
-[node name="Coin" parent="." instance=ExtResource("2_12ri7")]
-position = Vector2(-187, -72)
-script = ExtResource("3_o5rjx")
-
-[node name="Woodcutter" parent="." instance=ExtResource("1_k2fwk")]
-position = Vector2(2, -17)
-script = ExtResource("2_8sfeq")
-
-[node name="Camera2D" type="Camera2D" parent="Woodcutter"]
-zoom = Vector2(4, 4)
-position_smoothing_speed = 10.0
-
-[node name="Platform" parent="." instance=ExtResource("4_na6ep")]
-position = Vector2(126, -57)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
-libraries = {
-"": SubResource("AnimationLibrary_jnngr")
-}
-autoplay = "move"
-
-[connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
+[node name="Player" parent="." instance=ExtResource("2_83e28")]
+position = Vector2(3, -24)

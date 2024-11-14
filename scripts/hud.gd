@@ -8,6 +8,8 @@ var elapsed_time: int = 0
 @onready var score_label = $ScoreLabel
 @onready var pause_label = $PauseLabel
 @onready var resume_button = $resumeButton
+@onready var pause_button = $pauseButton
+
 
 func _ready():
 	# Start the timer with an interval of 1 second
@@ -42,10 +44,12 @@ func update_score_label():
 
 func _on_pause_button_pressed():
 	get_tree().paused = true
-	resume_button.show()
 	pause_label.show()
+	resume_button.show()
+	pause_button.hide()
 	
 func _on_resume_button_pressed():
 	get_tree().paused = false
+	pause_button.show()
 	resume_button.hide()
 	pause_label.hide()

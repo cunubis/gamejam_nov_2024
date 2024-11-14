@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://pi24ukrcjidv"]
+[gd_scene load_steps=3 format=3 uid="uid://ej1wf8t17nod"]
 
 [ext_resource type="Texture2D" uid="uid://b1g3stnksfcv4" path="res://assets/sprites/TilesetOliver.png" id="1_i0fid"]
 
@@ -6,6 +6,8 @@
 size = Vector2(96, 32)
 
 [node name="PlatformFullCollision" type="AnimatableBody2D"]
+collision_layer = 4
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_i0fid")

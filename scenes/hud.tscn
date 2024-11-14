@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn7p4rbqjyw1n"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_w26xx"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w26xx")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -13.0
+offset_right = 28.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 12
+text = "Score"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -3.0
+offset_right = 29.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 12
+text = "Timer"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="TimerLabel"]
+autostart = true
+
+[connection signal="timeout" from="TimerLabel/Timer" to="." method="_on_timer_timeout"]

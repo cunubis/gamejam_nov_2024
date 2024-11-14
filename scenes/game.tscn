@@ -1,12 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bryo4hyckymmt"]
+[gd_scene load_steps=13 format=3 uid="uid://bryo4hyckymmt"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_7gllp"]
 [ext_resource type="Texture2D" uid="uid://b1g3stnksfcv4" path="res://assets/sprites/TilesetOliver.png" id="1_y6yn3"]
-[ext_resource type="PackedScene" uid="uid://c77sikdbvev4r" path="res://scenes/coin.tscn" id="2_12ri7"]
-[ext_resource type="Script" path="res://scripts/coin.gd" id="3_o5rjx"]
-[ext_resource type="PackedScene" uid="uid://pi24ukrcjidv" path="res://scenes/platformOneWayCollision.tscn" id="6_a1eu5"]
+[ext_resource type="PackedScene" uid="uid://ej1wf8t17nod" path="res://scenes/platformOneWayCollision.tscn" id="6_a1eu5"]
 [ext_resource type="PackedScene" uid="uid://bpbuipbtxrvw" path="res://scenes/player.tscn" id="6_qhtdn"]
-[ext_resource type="PackedScene" uid="uid://cy1nb6swihcn8" path="res://scenes/platformFullCollision.tscn" id="7_gidwm"]
+[ext_resource type="PackedScene" uid="uid://dvr1eonexelow" path="res://scenes/platformFullCollision.tscn" id="7_gidwm"]
+[ext_resource type="PackedScene" uid="uid://c77sikdbvev4r" path="res://scenes/coin.tscn" id="7_sisbv"]
 [ext_resource type="PackedScene" uid="uid://dn7p4rbqjyw1n" path="res://scenes/hud.tscn" id="8_tehjo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vskyf"]
@@ -168,10 +167,6 @@ tile_set = SubResource("TileSet_l36wi")
 format = 2
 layer_0/tile_data = PackedInt32Array(65533, 2, 2, 131069, 2, 3, 196605, 2, 4, 262141, 2, 5, 327677, 2, 6, 393213, 2, 7, 65534, 65538, 2, 131070, 65538, 3, 196606, 65538, 4, 262142, 65538, 5, 327678, 65538, 6, 393214, 65538, 7, 65535, 131074, 2, 131071, 131074, 3, 196607, 131074, 4, 262143, 131074, 5, 327679, 131074, 6, 393215, 131074, 7, 0, 196610, 2, 65536, 196610, 3, 131072, 196610, 4, 196608, 196610, 5, 262144, 196610, 6, 327680, 196610, 7, 1, 262146, 2, 65537, 262146, 3, 131073, 262146, 4, 196609, 262146, 5, 262145, 262146, 6, 327681, 262146, 7, 2, 327682, 2, 65538, 327682, 3, 131074, 327682, 4, 196610, 327682, 5, 262146, 327682, 6, 327682, 327682, 7, -65532, 2, 0, 4, 2, 1, -65531, 65538, 0, 5, 65538, 1, -65530, 131074, 0, 6, 131074, 1, -65529, 196610, 0, 7, 196610, 1, -65528, 262146, 0, 8, 262146, 1, -65527, 327682, 0, 9, 327682, 1, -131061, 2, 0, -65525, 2, 1, -131060, 65538, 0, -65524, 65538, 1, -131059, 131074, 0, -65523, 131074, 1, -131058, 196610, 0, -65522, 196610, 1, -131057, 262146, 0, -65521, 262146, 1, -131056, 327682, 0, -65520, 327682, 1, -65518, 2, 0, 18, 2, 1, -65517, 65538, 0, 19, 65538, 1, -65516, 131074, 0, 20, 131074, 1, -65515, 196610, 0, 21, 196610, 1, -65514, 262146, 0, 22, 262146, 1, -65513, 327682, 0, 23, 327682, 1, 65526, 2, 0, 131062, 2, 1, 65527, 65538, 0, 131063, 65538, 1, 65528, 131074, 0, 131064, 131074, 1, 65529, 196610, 0, 131065, 196610, 1, 65530, 262146, 0, 131066, 262146, 1, 65531, 327682, 0, 131067, 327682, 1, -196623, 2, 0, -131087, 2, 1, -196622, 65538, 0, -131086, 65538, 1, -196621, 131074, 0, -131085, 131074, 1, -196620, 196610, 0, -131084, 196610, 1, -196619, 262146, 0, -131083, 262146, 1, -196618, 327682, 0, -131082, 327682, 1)
 
-[node name="Coin" parent="." instance=ExtResource("2_12ri7")]
-position = Vector2(-197, -97)
-script = ExtResource("3_o5rjx")
-
 [node name="PlatformFullCollision" parent="." instance=ExtResource("6_a1eu5")]
 position = Vector2(15, -21)
 
@@ -200,5 +195,7 @@ grow_vertical = 1
 
 [node name="PlayerProjectiles" type="Node2D" parent="."]
 
-[connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
+[node name="Coin" parent="." instance=ExtResource("7_sisbv")]
+position = Vector2(-194, -84)
+
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]

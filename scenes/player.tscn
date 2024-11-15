@@ -63,8 +63,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v6ir"]
-size = Vector2(32, 31)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gbmub"]
+radius = 16.0312
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_iumue")
@@ -75,11 +75,11 @@ animation = &"Jump"
 frame_progress = 0.960162
 
 [node name="CollisionPlayer" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_3v6ir")
+shape = SubResource("CircleShape2D_gbmub")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+limit_bottom = 93
 
 [node name="ShootTimer" type="Timer" parent="."]
 

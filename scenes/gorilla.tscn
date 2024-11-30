@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmk1ns4hcr0xj"]
+
+[ext_resource type="Script" path="res://scripts/gorilla.gd" id="1_7vmyw"]
+[ext_resource type="SpriteFrames" uid="uid://bi2mmd0f0u4v4" path="res://assets/sprites/chars/5 Gorilla/GorillaSprite_idle.tres" id="2_50201"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mnpo"]
+size = Vector2(30, 17.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k62xc"]
+size = Vector2(30, 28)
+
+[node name="MobScene" type="Node2D"]
+
+[node name="Mob" type="CharacterBody2D" parent="."]
+collision_layer = 2
+script = ExtResource("1_7vmyw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mob"]
+light_mask = 2
+sprite_frames = ExtResource("2_50201")
+animation = &"dead"
+
+[node name="BodyArea" type="Area2D" parent="Mob"]
+visible = false
+position = Vector2(0, -2)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob/BodyArea"]
+position = Vector2(0, 7.25)
+shape = SubResource("RectangleShape2D_4mnpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
+visible = false
+shape = SubResource("RectangleShape2D_k62xc")
+
+[node name="RayCast2D" type="RayCast2D" parent="Mob"]
+target_position = Vector2(-20, 20)
+collision_mask = 2
+
+[connection signal="body_entered" from="Mob/BodyArea" to="Mob" method="_on_body_area_body_entered"]

@@ -1,0 +1,61 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://bi2mmd0f0u4v4"]
+
+[ext_resource type="Texture2D" uid="uid://ddphv784egiah" path="res://assets/sprites/chars/5 Gorilla/Gorilla1.png" id="1_hvel1"]
+[ext_resource type="Texture2D" uid="uid://cj7xk7sh7ky8k" path="res://assets/sprites/chars/5 Gorilla/GorillaExpl1.png" id="1_njh8d"]
+[ext_resource type="Texture2D" uid="uid://daru67ds5877l" path="res://assets/sprites/chars/5 Gorilla/GorillaExpl2.png" id="2_2v0l1"]
+[ext_resource type="Texture2D" uid="uid://dy8d13ylbgtma" path="res://assets/sprites/chars/5 Gorilla/Gorilla2.png" id="2_4x6x8"]
+[ext_resource type="Texture2D" uid="uid://tw0pbhfkocey" path="res://assets/sprites/chars/5 Gorilla/GorillaExpl3.png" id="3_lv74c"]
+[ext_resource type="Texture2D" uid="uid://dpkftb8ly1kig" path="res://assets/sprites/chars/5 Gorilla/GorillaExpl4.png" id="4_hw1tv"]
+[ext_resource type="Texture2D" uid="uid://cdvarlfkd6ppi" path="res://assets/sprites/chars/5 Gorilla/GorillaExpl5.png" id="5_wxmu4"]
+[ext_resource type="Texture2D" uid="uid://brd8svec1g13" path="res://assets/sprites/chars/5 Gorilla/GorillaExpl6.png" id="6_8sjqc"]
+[ext_resource type="Texture2D" uid="uid://cj04oidx12wq5" path="res://assets/sprites/chars/5 Gorilla/GorillaExpl8.png" id="7_ib5jo"]
+[ext_resource type="Texture2D" uid="uid://cc3eoqfi6yglb" path="res://assets/sprites/chars/5 Gorilla/GorillaExpl9.png" id="8_vlmoh"]
+
+[resource]
+resource_name = "default"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_njh8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2v0l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lv74c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hw1tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wxmu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8sjqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ib5jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vlmoh")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hvel1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4x6x8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]

@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cghyo43s3i1dn"]
+
+[ext_resource type="Texture2D" uid="uid://8bv5igi3oe0r" path="res://sheets/gorilladead/GorillaExpl1.png" id="1_u3b1d"]
+[ext_resource type="Texture2D" uid="uid://cph354e2uocsr" path="res://sheets/gorilladead/GorillaExpl2.png" id="2_qk5du"]
+[ext_resource type="Texture2D" uid="uid://b55avj2ugri25" path="res://sheets/gorilladead/GorillaExpl3.png" id="3_3x7sx"]
+[ext_resource type="Texture2D" uid="uid://1ndltbn3kvb8" path="res://sheets/gorilladead/GorillaExpl4.png" id="4_wxvmj"]
+[ext_resource type="Texture2D" uid="uid://bqlj7mbdhju20" path="res://sheets/gorilladead/GorillaExpl5.png" id="5_ettbl"]
+[ext_resource type="Texture2D" uid="uid://beqpf32yl65ka" path="res://sheets/gorilladead/GorillaExpl6.png" id="6_1v68k"]
+[ext_resource type="Texture2D" uid="uid://bc20d26itb3ok" path="res://sheets/gorilladead/GorillaExpl8.png" id="7_obxci"]
+[ext_resource type="Texture2D" uid="uid://8swsk5vmkn02" path="res://sheets/gorilladead/GorillaExpl9.png" id="8_lkr3v"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u3b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qk5du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3x7sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wxvmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ettbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1v68k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_obxci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lkr3v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
